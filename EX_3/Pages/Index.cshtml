@@ -1,0 +1,10 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Incluir o componente -->
+<component type="typeof(HelloComponent)" render-mode="ServerPrerendered" />

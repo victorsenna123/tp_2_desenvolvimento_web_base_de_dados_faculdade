@@ -1,0 +1,33 @@
+@page
+@model FormPageModel
+
+<h2>Contact Us</h2>
+
+<form method="post" class="mt-4">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" asp-for="Name" class="form-control" placeholder="Enter your name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" asp-for="Email" class="form-control" placeholder="Enter your email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="message" class="form-label">Message:</label>
+        <textarea id="message" asp-for="Message" class="form-control" rows="5" placeholder="Enter your message"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="mt-4 alert alert-success">
+        <strong>@TempData["SuccessMessage"]</strong>
+    </div>
+}
